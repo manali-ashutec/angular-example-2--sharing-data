@@ -1,3 +1,12 @@
-<ng-container *ngFor="let items of showItem">
-  <p *ngIf="data">{{ items.name }}, {{ items.price }}, {{ items?.quantity   }}</p>
-</ng-container>
+<table *ngIf="data" style="border: 1px solid black">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th *ngIf="items?.quantity">Quantity</th>
+  </tr>
+  <tr *ngFor="let items of showItem">
+    <td>{{ items.name }}</td>
+    <td>{{ items.price }}</td>
+    <td *ngIf="items?.quantity">{{ items?.quantity }}</td>
+  </tr>
+</table>
